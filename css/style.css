@@ -8,12 +8,20 @@ body {
   font-family: "League Spartan", sans-serif;
   font-size: 62.5%;
   background-color: hsl(0, 0%, 100%);
+  overflow-x: hidden;
+  position: relative;
 }
 
 .wrapper {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+.wrapper .img-top {
+  display: none;
+}
+.wrapper .img-bottom {
+  display: none;
 }
 
 .social {
@@ -27,10 +35,13 @@ body {
   margin: 3em 1.2em;
 }
 .social__heading-title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin: 1em 1em 0.5em;
   font-weight: bold;
   color: hsl(300, 43%, 22%);
+}
+.social__heading-title .big-title {
+  font-size: 2.8rem;
 }
 .social__heading-text {
   color: hsl(303, 10%, 53%);
@@ -114,4 +125,97 @@ body {
 }
 .footer .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 992px) {
+  .wrapper .img-top {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+  }
+  .wrapper .img-bottom {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -5;
+  }
+  .social {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .social__heading {
+    text-align: left;
+    margin: 0 1em 0 2em;
+  }
+  .social__heading-title {
+    margin: 0.5em 0 0.5em;
+    font-size: 3.7rem;
+  }
+  .social__heading-title .big-title {
+    font-size: 4.5rem;
+  }
+  .social__box {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.5em;
+  }
+  .social__box-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-width: 420px;
+    padding: 1.5em;
+  }
+  .social__box-card--one {
+    grid-column: 1/11;
+    grid-row: 1/2;
+  }
+  .social__box-card--two {
+    grid-column: 2/12;
+    grid-row: 2/3;
+  }
+  .social__box-card--three {
+    grid-column: 3/13;
+    grid-row: 3/4;
+  }
+  .social__opinions {
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  .social__opinions-card {
+    min-height: 300px;
+    max-height: 300px;
+  }
+  .social__opinions-card--one {
+    grid-row: 1/11;
+    grid-column: 1/2;
+  }
+  .social__opinions-card--two {
+    grid-row: 1/12;
+    grid-column: 2/3;
+  }
+  .social__opinions-card--three {
+    grid-row: 1/13;
+    grid-column: 3/4;
+  }
+}
+@media (min-width: 1200px) {
+  .social__heading {
+    margin-right: 10em;
+  }
 }/*# sourceMappingURL=style.css.map */
