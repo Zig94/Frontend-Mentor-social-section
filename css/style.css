@@ -7,12 +7,105 @@
 body {
   font-family: "League Spartan", sans-serif;
   font-size: 62.5%;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .wrapper {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+.social__heading {
+  text-align: center;
+  margin: 3em 1.2em;
+}
+.social__heading-title {
+  font-size: 2.5rem;
+  margin: 1em 1em 0.5em;
+  font-weight: bold;
+  color: hsl(300, 43%, 22%);
+}
+.social__heading-text {
+  color: hsl(303, 10%, 53%);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+.social__box {
+  width: 100%;
+  max-width: 100%;
+}
+.social__box-card {
+  max-width: 100%;
+  height: auto;
+  margin: 0 1.2em 1.5em;
+  padding: 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  border-radius: 8px;
+  background-color: hsl(300, 24%, 96%);
+}
+.social__box-card-stars img {
+  padding: 0 0.3em;
+}
+.social__box-card-text {
+  font-size: 1.2rem;
+  color: hsl(300, 43%, 22%);
+  font-weight: bold;
+}
+.social__opinions {
+  width: 100%;
+}
+.social__opinions-card {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em 1.2em;
+  padding: 1.5em 0;
+  border-radius: 8px;
+  background-color: hsl(300, 43%, 22%);
+  overflow: hidden;
+}
+.social__opinions-card-user {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 2em 4em;
+}
+.social__opinions-card-user .img {
+  width: 50px;
+  border-radius: 50%;
+}
+.social__opinions-card-user-name {
+  margin-left: 1.5em;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+.social__opinions-card-user-name .name {
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+}
+.social__opinions-card-user-name .buyer {
+  color: hsl(333, 80%, 67%);
+  font-weight: 400;
+}
+.social__opinions-card .option-text {
+  margin: 2em 2em;
+  font-size: 1.1rem;
+  color: hsl(0, 0%, 100%);
+  line-height: 1.5em;
 }
 
 .footer .attribution {
