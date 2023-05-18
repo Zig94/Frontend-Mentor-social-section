@@ -8,7 +8,6 @@ body {
   font-family: "League Spartan", sans-serif;
   font-size: 62.5%;
   background-color: hsl(0, 0%, 100%);
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -84,6 +83,11 @@ body {
   border-radius: 8px;
   background-color: hsl(300, 43%, 22%);
   overflow: hidden;
+  border: 1px solid transparent;
+  transition: transform 0.3s;
+}
+.social__opinions-card:hover {
+  transform: scale(0.97);
 }
 .social__opinions-card-user {
   width: 100%;
@@ -119,9 +123,19 @@ body {
   line-height: 1.5em;
 }
 
+.footer {
+  width: 100%;
+  margin-top: 4em;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .footer .attribution {
-  font-size: 11px;
-  text-align: center;
+  padding: 3em 0;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 100%);
 }
 .footer .attribution a {
   color: hsl(228, 45%, 44%);
@@ -200,6 +214,10 @@ body {
   .social__opinions-card {
     min-height: 300px;
     max-height: 300px;
+    margin-right: 3em;
+    opacity: 0;
+    animation: showCard 2s forwards;
+    box-shadow: -3px -7px 14px 2px rgb(77, 15, 77);
   }
   .social__opinions-card--one {
     grid-row: 1/11;
@@ -208,14 +226,27 @@ body {
   .social__opinions-card--two {
     grid-row: 1/12;
     grid-column: 2/3;
+    animation-delay: 0.2s;
   }
   .social__opinions-card--three {
     grid-row: 1/13;
     grid-column: 3/4;
+    animation-delay: 0.4s;
+  }
+  .footer {
+    margin-top: 0;
   }
 }
 @media (min-width: 1200px) {
   .social__heading {
     margin-right: 10em;
+  }
+}
+@keyframes showCard {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */

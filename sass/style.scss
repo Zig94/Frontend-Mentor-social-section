@@ -9,13 +9,13 @@ body {
 	font-family: 'League Spartan', sans-serif;
 	font-size: 62.5%;
 	background-color: $white;
-	overflow-x: hidden;
 	position: relative;
 }
 .wrapper {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1200px;
+
 	.img-top {
 		display: none;
 	}
@@ -84,6 +84,11 @@ body {
 			border-radius: 8px;
 			background-color: $verydark;
 			overflow: hidden;
+			border: 1px solid transparent;
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(0.97);
+			}
 			&-user {
 				width: 100%;
 				height: 100%;
@@ -120,12 +125,18 @@ body {
 		}
 	}
 }
-
 .footer {
+	width: 100%;
+	margin-top: 4em;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	.attribution {
-		font-size: 11px;
-		text-align: center;
-
+		padding: 3em 0;
+		letter-spacing: 1px;
+		font-size: 1.2rem;
+		color: $white;
 		a {
 			color: hsl(228, 45%, 44%);
 		}
@@ -156,79 +167,96 @@ body {
 		grid-template-columns: 1fr 1fr;
 		&__heading {
 			text-align: left;
-			margin: 0 1em 0 2em; 
+			margin: 0 1em 0 2em;
 
 			&-title {
-                margin: .5em 0 .5em;
+				margin: 0.5em 0 0.5em;
 				font-size: 3.7rem;
 				.big-title {
 					font-size: 4.5rem;
 				}
 			}
-
 		}
-        &__box {
-            margin-top: 2em;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 1.5em;
-            &-card {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: center;
-                flex-wrap: nowrap;
-                min-width: 420px;
-                padding: 1.5em;
-                &--one {
-                    grid-column: 1/11;
-                    grid-row: 1/2;
-                }
-                &--two {
-                    grid-column: 2/12;
-                    grid-row: 2/3;
-                }
-                &--three {
-                    grid-column: 3/13;
-                    grid-row: 3/4;
-                }
-            }
-        }
+		&__box {
+			margin-top: 2em;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			gap: 1.5em;
+			&-card {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-evenly;
+				align-items: center;
+				flex-wrap: nowrap;
+				min-width: 420px;
+				padding: 1.5em;
+				&--one {
+					grid-column: 1/11;
+					grid-row: 1/2;
+				}
+				&--two {
+					grid-column: 2/12;
+					grid-row: 2/3;
+				}
+				&--three {
+					grid-column: 3/13;
+					grid-row: 3/4;
+				}
+			}
+		}
 
 		&__opinions {
 			grid-column: 1/3;
 			display: grid;
-			grid-template-columns: repeat(3,1fr);
-            grid-template-rows: repeat(12,1fr);
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(12, 1fr);
 			flex-wrap: nowrap;
 			justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1em;
-            &-card {
-                min-height: 300px;
-                max-height: 300px;
-                &--one {
-                    grid-row: 1/11;
-                    grid-column: 1/2;
-                }
-                &--two {
-                    grid-row: 1/12;
-                    grid-column: 2/3;
-                }
-                &--three {
-                    grid-row: 1/13;
-                    grid-column: 3/4;
-                }
-            }
+			align-items: center;
+			margin-bottom: 1em;
+			&-card {
+				min-height: 300px;
+				max-height: 300px;
+				margin-right: 3em;
+				opacity: 0;
+				animation: showCard 2s forwards;
+				box-shadow: -3px -7px 14px 2px rgb(77, 15, 77);
+				&--one {
+					grid-row: 1/11;
+					grid-column: 1/2;
+				}
+				&--two {
+					grid-row: 1/12;
+					grid-column: 2/3;
+					animation-delay: 0.2s;
+				}
+				&--three {
+					grid-row: 1/13;
+					grid-column: 3/4;
+					animation-delay: 0.4s;
+				}
+			}
 		}
 	}
+	.footer {
+		margin-top: 0;
+	}
+	
 }
 @media (min-width: 1200px) {
-.social {
-    &__heading {
-        margin-right:10em;
-
-    }
+	.social {
+		&__heading {
+			margin-right: 10em;
+		}
+	}
+	
 }
+@keyframes showCard {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
